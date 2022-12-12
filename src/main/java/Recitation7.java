@@ -8,25 +8,20 @@
 
 public class Recitation7
 {
-    public static void main(String[] args){
-
-    }
+    // define your constants after this comment
     public static String leftRightTriangle(int height)
     {
         StringBuilder str = new StringBuilder();
-        for (int row = 0; row <= height; row++){
-            str.append("*".repeat(row + 1));
-            str.append("\n");
-        }
+        for (int row = 0; row < height; row++) str.append("*".repeat(row + 1)).append("\n");
         return str.toString();
     }
 
     public static String rightRightTriangle(int height)
     {
         StringBuilder str = new StringBuilder();
-        for(int row = 0; row <= height; row++){
+        for(int row = 0; row < height; row++){
             str.append(" ".repeat(height - row - 1));
-            str.append("*" .repeat(row + 1));
+            str.append("*".repeat(row +1)).append("\n");
         }
         return str.toString();
     }
@@ -34,14 +29,32 @@ public class Recitation7
     public static String circle(int radius)
     {
         StringBuilder str = new StringBuilder();
-        for(int row = radius;  row >= - radius - 1; row--){
+        for(int row = radius;  row >= - (radius - 1); row--){
             int verse = (int) Math.sqrt (radius * radius - row * row);
-            int x = (radius * 2 - (verse * 2));
-            if (x != radius * 2){
-                str.append(" ".repeat(Math.max(0, x /2 )));
+            int fifa = (radius * 2 - (verse * 2));
+            if (fifa != radius * 2){
+                str.append(" ".repeat(Math.max(0, fifa /2 )));
+                for(int y = verse * 2;y *2 > 0; y--) str.append('*');
+                str.append("\n");
             }
 
         }
         return str.toString();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
